@@ -1,0 +1,7 @@
+/sites/
+/profiles/
+/modules/
+/themes/
+/vendor/
+composer.json
+composer.lock
