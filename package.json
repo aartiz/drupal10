@@ -1,0 +1,9 @@
+{
+  "name": "createpatch",
+  "version": "1.0.0",
+  "description": "for drupal 10",
+  "main": "index.js",
+  "repository": "git@github.com:aartiz/drupal10.git",
+  "author": "aartiz <aarti.zikre@qed42.com>",
+  "license": "MIT"
+}
