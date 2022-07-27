@@ -1,0 +1,19 @@
+{
+  "name": "drupal-10.0.x-dev",
+  "version": "1.0.0",
+  "description": "<img alt=\"Drupal Logo\" src=\"https://www.drupal.org/files/Wordmark_blue_RGB.png\" height=\"60px\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aartiz/drupal10.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aartiz/drupal10/issues"
+  },
+  "homepage": "https://github.com/aartiz/drupal10#readme"
+}

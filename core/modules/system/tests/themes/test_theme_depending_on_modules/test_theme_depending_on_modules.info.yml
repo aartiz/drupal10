@@ -4,8 +4,3 @@ base theme: stark
 dependencies:
   - test_module_required_by_theme
   - test_another_module_required_by_theme
-
-# Information added by Drupal.org packaging script on 2022-07-22
-version: '10.0.x-dev'
-project: 'drupal'
-datestamp: 1658468656

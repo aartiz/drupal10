@@ -1,3 +1,6 @@
+/patches/
+.lando.yml
+phpcs.xml
 /sites/
 /profiles/
 /modules/
