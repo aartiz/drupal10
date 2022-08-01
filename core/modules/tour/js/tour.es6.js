@@ -315,10 +315,10 @@
         if (tourItems.length !== filteredTour.length) {
           filteredTour.forEach((filteredTourItem, filteredTourItemId) => {
             filteredTour[filteredTourItemId].counter = Drupal.t(
-              '!tour_item of !total',
+              '@tour_item of @total',
               {
-                '!tour_item': filteredTourItemId + 1,
-                '!total': filteredTour.length,
+                '@tour_item': filteredTourItemId + 1,
+                '@total': filteredTour.length,
               },
             );
 

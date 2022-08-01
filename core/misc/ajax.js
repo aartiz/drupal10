@@ -58,40 +58,40 @@
     let responseText;
 
     if (xmlhttp.status) {
-      statusCode = `\n${Drupal.t('An AJAX HTTP error occurred.')}\n${Drupal.t('HTTP Result Code: !status', {
-        '!status': xmlhttp.status
+      statusCode = `\n${Drupal.t('An AJAX HTTP error occurred.')}\n${Drupal.t('HTTP Result Code: @status', {
+        '@status': xmlhttp.status
       })}`;
     } else {
       statusCode = `\n${Drupal.t('An AJAX HTTP request terminated abnormally.')}`;
     }
 
     statusCode += `\n${Drupal.t('Debugging information follows.')}`;
-    const pathText = `\n${Drupal.t('Path: !uri', {
-      '!uri': uri
+    const pathText = `\n${Drupal.t('Path: @uri', {
+      '@uri': uri
     })}`;
     statusText = '';
 
     try {
-      statusText = `\n${Drupal.t('StatusText: !statusText', {
-        '!statusText': xmlhttp.statusText.trim()
+      statusText = `\n${Drupal.t('StatusText: @statusText', {
+        '@statusText': xmlhttp.statusText.trim()
       })}`;
     } catch (e) {}
 
     responseText = '';
 
     try {
-      responseText = `\n${Drupal.t('ResponseText: !responseText', {
-        '!responseText': xmlhttp.responseText.trim()
+      responseText = `\n${Drupal.t('ResponseText: @responseText', {
+        '@responseText': xmlhttp.responseText.trim()
       })}`;
     } catch (e) {}
 
     responseText = responseText.replace(/<("[^"]*"|'[^']*'|[^'">])*>/gi, '');
     responseText = responseText.replace(/[\n]+\s+/g, '\n');
-    const readyStateText = xmlhttp.status === 0 ? `\n${Drupal.t('ReadyState: !readyState', {
-      '!readyState': xmlhttp.readyState
+    const readyStateText = xmlhttp.status === 0 ? `\n${Drupal.t('ReadyState: @readyState', {
+      '@readyState': xmlhttp.readyState
     })}` : '';
-    customMessage = customMessage ? `\n${Drupal.t('CustomMessage: !customMessage', {
-      '!customMessage': customMessage
+    customMessage = customMessage ? `\n${Drupal.t('CustomMessage: @customMessage', {
+      '@customMessage': customMessage
     })}` : '';
     this.message = statusCode + pathText + statusText + customMessage + responseText + readyStateText;
     this.name = 'AjaxError';
@@ -264,8 +264,8 @@
     ajax.options.url += `${Drupal.ajax.WRAPPER_FORMAT}=${wrapper}`;
     $(ajax.element).on(elementSettings.event, function (event) {
       if (!drupalSettings.ajaxTrustedUrl[ajax.url] && !Drupal.url.isLocal(ajax.url)) {
-        throw new Error(Drupal.t('The callback URL is not local and not trusted: !url', {
-          '!url': ajax.url
+        throw new Error(Drupal.t('The callback URL is not local and not trusted: @url', {
+          '@url': ajax.url
         }));
       }
 

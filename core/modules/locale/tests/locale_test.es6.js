@@ -26,7 +26,7 @@ Drupal.t("Context Unquoted t", {}, {context: "Context string unquoted"});
 Drupal.t("Context Single Quoted t", {}, {'context': "Context string single quoted"});
 Drupal.t("Context Double Quoted t", {}, {"context": "Context string double quoted"});
 
-Drupal.t("Context !key Args t", {'!key': 'value'}, {context: "Context string"});
+Drupal.t("Context @key Args t", {'@key': 'value'}, {context: "Context string"});
 
 Drupal.formatPlural(1, "Standard Call plural", "Standard Call @count plural");
 Drupal
@@ -49,6 +49,6 @@ Drupal.formatPlural(1, "Context Unquoted plural", "Context Unquoted @count plura
 Drupal.formatPlural(1, "Context Single Quoted plural", "Context Single Quoted @count plural", {}, {'context': "Context string single quoted"});
 Drupal.formatPlural(1, "Context Double Quoted plural", "Context Double Quoted @count plural", {}, {"context": "Context string double quoted"});
 
-Drupal.formatPlural(1, "Context !key Args plural", "Context !key Args @count plural", {'!key': 'value'}, {context: "Context string"});
+Drupal.formatPlural(1, "Context @key Args plural", "Context @key Args @count plural", {'@key': 'value'}, {context: "Context string"});
 
 Drupal.formatPlural(1, "No count argument plural - singular", "No count argument plural - plural");

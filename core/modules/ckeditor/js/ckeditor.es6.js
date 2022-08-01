@@ -30,7 +30,7 @@
       // label so that screen readers say something that is understandable
       // for end users.
       const label = $(`label[for=${element.getAttribute('id')}]`).html();
-      format.editorSettings.title = Drupal.t('Rich Text Editor, !label field', {
+      format.editorSettings.title = Drupal.t('Rich Text Editor, @label field', {
         '!label': label,
       });
 

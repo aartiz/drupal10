@@ -101,9 +101,9 @@
     let responseText;
     if (xmlhttp.status) {
       statusCode = `\n${Drupal.t('An AJAX HTTP error occurred.')}\n${Drupal.t(
-        'HTTP Result Code: !status',
+        'HTTP Result Code: @status',
         {
-          '!status': xmlhttp.status,
+          '@status': xmlhttp.status,
         },
       )}`;
     } else {
@@ -112,15 +112,15 @@
       )}`;
     }
     statusCode += `\n${Drupal.t('Debugging information follows.')}`;
-    const pathText = `\n${Drupal.t('Path: !uri', { '!uri': uri })}`;
+    const pathText = `\n${Drupal.t('Path: @uri', { '@uri': uri })}`;
     statusText = '';
     // In some cases, when statusCode === 0, xmlhttp.statusText may not be
     // defined. Unfortunately, testing for it with typeof, etc, doesn't seem to
     // catch that and the test causes an exception. So we need to catch the
     // exception here.
     try {
-      statusText = `\n${Drupal.t('StatusText: !statusText', {
-        '!statusText': xmlhttp.statusText.trim(),
+      statusText = `\n${Drupal.t('StatusText: @statusText', {
+        '@statusText': xmlhttp.statusText.trim(),
       })}`;
     } catch (e) {
       // Empty.
@@ -130,8 +130,8 @@
     // Again, we don't have a way to know for sure whether accessing
     // xmlhttp.responseText is going to throw an exception. So we'll catch it.
     try {
-      responseText = `\n${Drupal.t('ResponseText: !responseText', {
-        '!responseText': xmlhttp.responseText.trim(),
+      responseText = `\n${Drupal.t('ResponseText: @responseText', {
+        '@responseText': xmlhttp.responseText.trim(),
       })}`;
     } catch (e) {
       // Empty.
@@ -144,14 +144,14 @@
     // We don't need readyState except for status == 0.
     const readyStateText =
       xmlhttp.status === 0
-        ? `\n${Drupal.t('ReadyState: !readyState', {
-            '!readyState': xmlhttp.readyState,
+        ? `\n${Drupal.t('ReadyState: @readyState', {
+            '@readyState': xmlhttp.readyState,
           })}`
         : '';
 
     customMessage = customMessage
-      ? `\n${Drupal.t('CustomMessage: !customMessage', {
-          '!customMessage': customMessage,
+      ? `\n${Drupal.t('CustomMessage: @customMessage', {
+          '@customMessage': customMessage,
         })}`
       : '';
 
@@ -575,8 +575,8 @@
         !Drupal.url.isLocal(ajax.url)
       ) {
         throw new Error(
-          Drupal.t('The callback URL is not local and not trusted: !url', {
-            '!url': ajax.url,
+          Drupal.t('The callback URL is not local and not trusted: @url', {
+            '@url': ajax.url,
           }),
         );
       }
